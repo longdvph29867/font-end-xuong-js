@@ -1,8 +1,6 @@
 import Home from "./page/home";
 import Login from "./page/login";
-
 import { render,router } from "./utilities";
-import Home from "./pages/home";
 import ShopPage from "./pages/shop";
 const app = document.querySelector('#app');
 

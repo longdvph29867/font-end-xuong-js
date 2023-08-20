@@ -1,16 +1,16 @@
 import { dataService } from "@/service/dataService";
 
 
-let data = [];
-dataService.getCategories()
-.then((res) => {
-console.log(res);
-data = res.data.data
+// let data = [];
+// dataService.getCategories()
+// .then((res) => {
+// console.log(res);
+// data = res.data.data
 
-})
-.catch((err) => {
-console.log(err);
-});
+// })
+// .catch((err) => {
+// console.log(err);
+// });
 
 const Login =()=>{
 
