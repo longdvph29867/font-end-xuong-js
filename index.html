@@ -110,7 +110,31 @@
     </div>
     <script type="text/javascript" src="//code.jquery.com/jquery-1.11.0.min.js"></script>
     <script type="text/javascript" src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
-    <script type="text/javascript" src="slick/slick.min.js"></script>
+    <script src="node_modules/jquery/dist/jquery.min.js"></script>
+    <script src="node_modules/slick-carousel/slick/slick.min.js"></script>
     <script type="module" src="./src/main.js"></script>
+    <script>
+        $(document).ready(function(){
+            $('.slide_brand').slick({
+            infinite: true,
+            arrows:false,
+            slidesToShow: 5,
+            slidesToScroll: 1,
+            autoplay: true,
+            autoplaySpeed: 2000,
+        });
+        $('.slide').slick({
+            dots: false,
+            infinite: true,
+            arrows:false,
+            speed: 500,
+            fade: true,
+            cssEase: 'linear',
+            slidesToScroll: 1,
+            autoplay: true,
+            autoplaySpeed: 2000,
+        });
+    });
+    </script>
   </body>
 </html>
