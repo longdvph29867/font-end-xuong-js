@@ -8,74 +8,105 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Kablammo&family=Poppins:wght@600&family=Roboto:ital,wght@1,900&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="/css/home.css">
+    <link rel="stylesheet" href="fontawesome/css/all.min.css">
+    <link rel="stylesheet" type="text/css" href="node_modules/slick-carousel/slick/slick.css"/>
+  <link rel="stylesheet" type="text/css" href="node_modules/slick-carousel/slick/slick-theme.css"/>
+    <link rel="stylesheet" href="/src/main.css">
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="/css/shop.css">
   </head>
   <body>
     <div class="page">
       <header>
-        <section class="header_logo_nav">
-            <section class="header_logo_nav_content">
-                <section id="logo">
-                    <img src="/img/logo.png" alt="logo">
-                </section>
-                <nav id="nav">
-                    <a href="/">Home</a>
-                    <a href="#">Shop</a>
-                    <a href="#">About</a>
-                    <a href="#">Contact</a>
-                </nav>
-                <section id="cart">
-                    <img src=" ./img/pepole.png" alt="pepole">
-                    <img src="/img/akar-icons_search.png" alt="search">
-                    <img src="/img/akar-icons_heart.png" alt="">
-                    <img src="/img/cart.png" alt="">
-                </section>
-            </section>
-        </section>
+        <div class="w-[1290px] mx-auto flex items-center py-3">
+            <div class="w-[322px]" >
+                <a href="#"><img src="img/logo-1670322125.jpg" alt=""></a>
+            </div>
+            <div class="">
+                <ul class="flex">
+                    <li><a class="nav_link font-bold p-5 pl-0" href="#">Home</a></li>
+                    <li><a class="nav_link font-bold p-5" href="#">Shop</a></li>
+                    <li><a class="nav_link font-bold p-5" href="#">About</a></li>
+                    <li><a class="nav_link font-bold p-5" href="#">Contact</a></li>
+                </ul>
+            </div>
+            <div class="flex items-center ml-auto w-max" >
+                <form class="flex mr-3" action="" >
+                    <input class="h-10 pl-1 outline-none border rounded-l-lg" type="text">
+                    <button class="btn_search h-10 bg-[#ECAF82] w-10 rounded-r-lg"><i class="fa-solid fa-magnifying-glass"></i></button>
+                </form>
+                <div class="px-3 avatar relative">
+                    <img class=" w-12 h-12 cursor-pointer" src="img/avatar.jpg" alt="">
+                    <div class="hidden absolute top-14 right-0 user_menu z-10 bg-white w-[200px] p-3">
+                        <div class="h-3 w-full absolute -top-3 right-0"></div>
+                        <ul>
+                            <li class="px-1 py-2"><a class="user_link" href="#">Sign in</a></li>
+                            <li class="px-1 py-2"><a class="user_link" href="#">Resiger</a></li>
+                            <li class="px-1 py-2"><a class="user_link" href="#">My account</a></li>
+                            <li class="px-1 py-2"><a class="user_link" href="#">Wishlist (0)</a></li>
+                            <li class="px-1 py-2"><a class="user_link" href="#">Compare (0)</a></li>
+                            <li class="px-1 py-2"><a class="user_link" href="#">Checkout</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="icon m-3 text-2xl cursor-pointer relative">
+                    <i class="fa-regular fa-heart"></i>
+                    <span class="absolute -top-1 -right-2 text-xs rounded-full text-white bg-red-500 w-4 h-4 text-center">5</span>
+                </div>
+                <div class="icon ml-3 text-2xl cursor-pointer relative">
+                    <i class="fa-solid fa-cart-shopping"></i>
+                    <span class="absolute -top-1 -right-2 text-xs rounded-full text-white bg-red-500 w-4 h-4 text-center">5</span>
+                </div>
+            </div>
+        </div>
     </header>
     <div id="app"></div>
-    <footer>
-      <section class="content_footer">
-          <section class="content_footer_logo">
-              <h2>Funiro.</h2>
-              <div>
-                <h5>
-                  400 University Drive Suite 200 Coral Gables,
-                  FL 33134 USA
-                </h5>
-              </div>
-          </section>
-          <section class="content_footer_nav">
-              <h3>Links</h3>
-              <div class="footer-nav">
-                <ul>
-                  <li><a href=""> Home</a></li>
-                  <li><a href=""> Shop</a></li>
-                  <li><a href=""> About</a></li>
-                  <li><a href=""> Contact</a></li>
-                </ul>
-              </div>
-          </section>
-          <section class="content_footer_logo">
-              <h3>Help</h3>
-              <div class="footer-nav">
-                <ul>
-                  <li><a href=""> Payment Options</a></li>
-                  <li><a href=""> Returns</a></li>
-                  <li><a href=""> Privacy Policies</a></li>
-                </ul>
-              </div>
-          </section>
-          <section class="content_footer_nav">
-            <h3>Newleter</h3>
-            <form action="" class="form-footer">
-              <input type="text" placeholder="Enter Your Email Address">
-              <button>SUBSCRIBE</button>
-            </form>
-          </section>
-      </section>
+    <footer class="pb-10">
+      <div class="w-[1290px] mx-auto grid grid-cols-4 border-b-2 py-14">
+          <div>
+              <h2 class="font-bold text-lg">Contact Us</h2>
+              <ul class="mt-8">
+                  <li class="text-gray-600 py-1"><i class=" mr-3 fa-solid fa-location-arrow"></i>451 Wall Street, UK, London</li>
+                  <li class="text-gray-600 py-1"><i class=" mr-3 fa-solid fa-phone"></i>Phone: (+084) 333-1233</li>
+                  <li class="text-gray-600 py-1"><i class=" mr-3 fa-regular fa-address-book"></i>demo@demo.com.</li>
+              </ul>
+          </div>
+          <div>
+              <h2 class="font-bold text-lg">My Account</h2>
+              <ul class="mt-8">
+                  <li class="py-1"><a class="text-gray-600 hover:text-[#ECAF82]" href="#">The board</a></li>
+                  <li class="py-1"><a class="text-gray-600 hover:text-[#ECAF82]" href="#">Accessories</a></li>
+                  <li class="py-1"><a class="text-gray-600 hover:text-[#ECAF82]" href="#">FAQs</a></li>
+                  <li class="py-1"><a class="text-gray-600 hover:text-[#ECAF82]" href="#">Terms & Conditions</a></li>
+              </ul>
+          </div>
+          <div>
+              <h2 class="font-bold text-lg">Product</h2>
+              <ul class="mt-8">
+                  <li class="py-1"><a class="text-gray-600 hover:text-[#ECAF82]" href="#">Order</a></li>
+                  <li class="py-1"><a class="text-gray-600 hover:text-[#ECAF82]" href="#">Downloads</a></li>
+                  <li class="py-1"><a class="text-gray-600 hover:text-[#ECAF82]" href="#">Addresses</a></li>
+                  <li class="py-1"><a class="text-gray-600 hover:text-[#ECAF82]" href="#">Account details</a></li>
+              </ul>
+          </div>
+          <div>
+              <h2 class="font-bold text-lg">Design Blog</h2>
+              <ul class="mt-8">
+                  <li class="py-1"><a class="text-gray-600 hover:text-[#ECAF82]" href="#">Blog</a></li>
+                  <li class="py-1"><a class="text-gray-600 hover:text-[#ECAF82]" href="#">Forums</a></li>
+                  <li class="py-1"><a class="text-gray-600 hover:text-[#ECAF82]" href="#">Builders Showcase</a></li>
+                  <li class="py-1"><a class="text-gray-600 hover:text-[#ECAF82]" href="#">How-To Guides</a></li>
+              </ul>
+          </div>
+      </div>
+      <div class="text-center mt-10">
+          <p class="font-medium">Copyright © 2022 - mixxstore. All rights reserved.</p>
+      </div>
   </footer>
     </div>
+    <script type="text/javascript" src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript" src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+    <script type="text/javascript" src="slick/slick.min.js"></script>
     <script type="module" src="./src/main.js"></script>
   </body>
 </html>

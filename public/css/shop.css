@@ -1,0 +1,16 @@
+.coating-product{
+    transition: ease .5s;
+  }
+  .product:hover .coating-product{
+    top:0;
+  }
+  .btnList{
+    padding: 8px 14px;
+    background-color:#F9F1E7;
+    cursor: pointer;
+    border-radius: 10px;
+  }
+  .active{
+    padding: 8px 14px;
+    background-color: #B88E2F;
+  }

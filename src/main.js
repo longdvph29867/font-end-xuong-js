@@ -1,10 +1,15 @@
-import Home from "./page/home";
+
 import { render,router } from "./utilities";
+import Home from "./pages/home";
+import ShopPage from "./pages/shop";
 const app = document.querySelector('#app');
 
 router.on("/", () => {
     render(Home, app);
   });
 
+router.on("/shop", () => {
+  render(ShopPage, app);
+});
 router.resolve();
 setupCounter(document.querySelector('#counter'))
