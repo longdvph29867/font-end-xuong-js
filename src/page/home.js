@@ -1,6 +1,10 @@
+import cartItem from "./test";
+
+
 const Home =()=>{
     return`
     <main>
+        ${cartItem('123asd')}
             <section class="content_main1">
                 <section class="Browse_the_range">
                     <h2>Browse The Range</h2>
