@@ -1,5 +1,5 @@
-import Home from "./page/home";
-import Login from "./page/login";
+import Home from "./pages/home";
+import Login from "./pages/login";
 import { render,router } from "./utilities";
 import ShopPage from "./pages/shop";
 const app = document.querySelector('#app');
