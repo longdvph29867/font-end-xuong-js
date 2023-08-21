@@ -14,10 +14,10 @@
 .btn_search:hover{
     background-color: #dd8546;
 }
-.user_menu{
+.menu_child{
     box-shadow: 0 0 5px 0 rgba(0, 0, 0,.3) ;
 }
-.avatar:hover .user_menu{
+.main_menu:hover .menu_child{
     display: block;
 }
 .icon{
