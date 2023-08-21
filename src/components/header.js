@@ -1,7 +1,6 @@
 const Header =()=>{
 
 
-
     return`
     <header>
         <div class="w-[1290px] mx-auto flex items-center py-3">
@@ -23,6 +22,7 @@ const Header =()=>{
                     <button class="btn_search h-10 bg-[#ECAF82] w-10 rounded-r-lg"><i
                             class="fa-solid fa-magnifying-glass"></i></button>
                 </form>
+                <!--
                 <div class="px-3 avatar relative">
                     <img class=" w-12 h-12 cursor-pointer" src="img/avatar.jpg" alt="">
                     <div class="hidden absolute top-14 right-0 user_menu z-10 bg-white w-[200px] p-3">
@@ -34,6 +34,8 @@ const Header =()=>{
                         </ul>
                     </div>
                 </div>
+                -->
+                
                 <div class="icon m-3 text-2xl cursor-pointer relative">
                     <i class="fa-regular fa-heart"></i>
                     <span
