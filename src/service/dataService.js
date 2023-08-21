@@ -10,4 +10,7 @@ export const dataService = {
     getCategories: () => {
         return https.get('/categories')
     },
+    getProducts: () => {
+        return https.get('/products')
+    },
 }

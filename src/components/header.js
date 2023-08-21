@@ -1,7 +1,7 @@
 const Header =()=>{
 
 
-    return`
+    return /*html*/`
     <header>
         <div class="w-[1290px] mx-auto flex items-center py-3">
             <div class="w-[322px]">
@@ -56,8 +56,8 @@ const Header =()=>{
                         class="absolute -top-1 -right-2 text-xs rounded-full text-white bg-red-500 w-4 h-4 text-center">5</span>
                 </div>
                 <div class="w-max ml-5">
-                    <a class="nav_link font-bold" href="#">Đăng kí</a>
-                    <a class="nav_link block font-bold" href="#">Đăng nhập</a>
+                    <a class="nav_link font-bold" href="/login">Đăng nhập</a>
+                    <a class="nav_link block font-bold" href="/register">Đăng ký</a>
                 </div>
             </div>
         </div>

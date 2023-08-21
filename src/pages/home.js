@@ -1,9 +1,30 @@
 import Footer from "@/components/footer";
 import Header from "@/components/header";
+import { hiddenSpinner, showSpinner } from "@/components/messages";
+import { dataService } from "@/service/dataService";
+import { useEffect, useState } from "@/utilities";
 
 const Home =()=>{
-    return`
+
+    const [listProducts, setListProducts] = useState([]);
+
+    useEffect(() => {
+        showSpinner();
+        dataService.getProducts()
+        .then((res) => {
+            hiddenSpinner();
+            console.log(res);
+            setListProducts(res.data.data)
+        })
+        .catch((err) => {
+            hiddenSpinner();
+            console.log(err);
+        });
+    }, [])
+
+    return /*html*/`
     ${Header()}
+    
     <!-- slide-show -->
     <div class="slide">
         <div class="h-[633px]">
@@ -69,11 +90,14 @@ const Home =()=>{
         <!-- product -->
         <div>
             <div class="w-[1290px] mx-auto grid grid-cols-4 gap-5">
-                <div class="relative p-1 product_item">
+                ${
+                    listProducts.map(item => {
+                    return `
+                    <div class="relative p-1 product_item">
                     <span class="absolute top-2 left-2 bg-cyan-500 px-1 uppercase text-white text-xs">new</span>
                     <a href="#"><img src="img/product1.jpg" alt=""></a>
                     <div class="text-center">
-                        <a href="#" class="hover:text-[#ECAF82]"><h2 class=" font-medium mb-1">Hummingbird printed t-shirt</h2></a>
+                        <a href="#" class="hover:text-[#ECAF82]"><h2 class=" font-medium mb-1">${item.productName}</h2></a>
                         <span class="text-sm text-gray-400">Art</span> 
                         <div class="flex items-center text-sm justify-center my-2">
                             <i class="fa-regular fa-star"></i>
@@ -82,7 +106,7 @@ const Home =()=>{
                             <i class="fa-regular fa-star"></i>
                             <i class="fa-regular fa-star"></i>
                         </div>
-                        <span class="text-lg font-bold text-[#ECAF82]">$12</span>
+                        <span class="text-lg font-bold text-[#ECAF82]">$${item.price}</span>
                     </div>
                     <div class="absolute bottom-1/3 flex justify-center w-full gap-3 functional_btn">
                         <div class="relative">
@@ -131,6 +155,10 @@ const Home =()=>{
                         </div>
                     </div>
                 </div>
+                    `
+                    }).join("")
+                }
+                
             </div>
         </div>
     </div>
