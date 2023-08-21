@@ -1,6 +1,9 @@
+import Footer from "@/components/footer";
+import Header from "@/components/header";
+
 const Home =()=>{
     return`
-    
+    ${Header()}
     <!-- slide-show -->
     <div class="slide">
         <div class="h-[633px]">
@@ -215,6 +218,7 @@ const Home =()=>{
         </div>
     </div>
     
+    ${Footer()}
     `
   };
 

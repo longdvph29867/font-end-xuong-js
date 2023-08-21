@@ -95,7 +95,8 @@ const Login =()=>{
                 </div>
                 <button type='button' class="bg-black rounded-lg text-white w-full h-10 hover:bg-[#ECAF82] duration-200">Login</button>
             </form>
-            <a class="hover:text-[#ECAF82] duration-200" href="#">No account? Create one here</a>
+            <a class="hover:text-[#ECAF82] duration-200 underline" href="/register">No account? Create one here</a>
+
         </div>
     </div>
 </div>
