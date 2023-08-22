@@ -5,8 +5,8 @@ import ShopPage from "./pages/shop";
 import Register from "./pages/register";
 import ProductsPage from "./pages/productsPage";
 import DetailsPage from "./pages/detailsPage";
-import Categories from "./pages/admin/categories";
-import CategoriesAdd from "./pages/admin/categories-add";
+import Categories from "./pages/admin/Categories/categories";
+import CategoriesAdd from "./pages/admin/Categories/categories-add";
 const app = document.querySelector('#app'); 
 
 router.on("/", () => {

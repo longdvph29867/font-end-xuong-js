@@ -29,7 +29,7 @@ const HeaderAdmin =()=>{
             </button>
         </div>
         <div>
-            <button class="bg-[#ecaf82] py-1.5 px-5 rounded text-white hover:bg-[#dd8546] duration-300">Bán hàng</button>
+            <a href="/" class="block bg-[#ecaf82] py-1.5 px-5 rounded text-white hover:bg-[#dd8546] duration-300">Bán hàng</a>
         </div>
     </nav>
     `
