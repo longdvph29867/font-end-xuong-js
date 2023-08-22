@@ -67,6 +67,21 @@
     display: block !important;
 }
 
+/* admin */
+.header-admin button i:nth-child(2) {
+    display: none;
+}
+.header-admin.show-admin button i:nth-child(1) {
+    display: none;
+}
+.header-admin.show-admin button i:nth-child(2) {
+    display: block;
+}
+.menu-nav.show-admin {
+    left: 0;
+}
+/* /admin */
+
 
 /*  */
 /*  */

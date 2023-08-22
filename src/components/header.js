@@ -73,8 +73,8 @@ const Header =()=>{
                     <div class="hidden absolute shadow-lg top-14 right-0 main_child z-10 bg-white w-[200px] p-3">
                         <div class="h-3 w-full absolute -top-3 right-0"></div>
                         <ul>
-                            <li class="px-1 py-2"><a class="user_link" href="/login">Admin</a></li>
-                            <li class="px-1 py-2"><a class="user_link" href="/shop">My account</a></li>
+                            <li class="px-1 py-2"><a class="user_link" href="/admin/categories">Admin</a></li>
+                            <li class="px-1 py-2"><a class="user_link" href="#">My account</a></li>
                             <li class="px-1 py-2"><button class="btn-logout user_link block">Logout</button></li>
                         </ul>
                     </div>
