@@ -31,6 +31,9 @@ const Categories = () => {
                             <th scope="col" class="px-6 py-3">
                                 Price
                             </th>
+                            <th scope="col" class="px-6 py-3">
+                                Action
+                            </th>
                         </tr>
                     </thead>
                     <tbody>
@@ -47,6 +50,10 @@ const Categories = () => {
                             <td class="px-6 py-4">
                                 $2999
                             </td>
+                            <td class="px-6 py-4">
+                                <a href="#" class="inline-block bg-yellow-400 mb-3 py-1.5 px-5 rounded text-white hover:bg-yellow-600 duration-300">Edit</a>
+                                <a href="#" class="inline-block bg-red-500 mb-3 py-1.5 px-5 rounded text-white hover:bg-red-700 duration-300">Delete</a>
+                            </td>
                         </tr>
                         <tr class="bg-white border-b">
                             <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap">
@@ -61,6 +68,10 @@ const Categories = () => {
                             <td class="px-6 py-4">
                                 $1999
                             </td>
+                            <td class="px-6 py-4">
+                                <a href="#" class="inline-block bg-yellow-400 mb-3 py-1.5 px-5 rounded text-white hover:bg-yellow-600 duration-300">Edit</a>
+                                <a href="#" class="inline-block bg-red-500 mb-3 py-1.5 px-5 rounded text-white hover:bg-red-700 duration-300">Delete</a>
+                            </td>
                         </tr>
                         <tr class="bg-white">
                             <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap">
@@ -74,6 +85,10 @@ const Categories = () => {
                             </td>
                             <td class="px-6 py-4">
                                 $99
+                            </td>
+                            <td class="px-6 py-4">
+                                <a href="#" class="inline-block bg-yellow-400 mb-3 py-1.5 px-5 rounded text-white hover:bg-yellow-600 duration-300">Edit</a>
+                                <a href="#" class="inline-block bg-red-500 mb-3 py-1.5 px-5 rounded text-white hover:bg-red-700 duration-300">Delete</a>
                             </td>
                         </tr>
                     </tbody>
