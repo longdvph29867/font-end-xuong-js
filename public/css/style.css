@@ -63,6 +63,11 @@
 }
 
 
+.menu-user:hover > div {
+    display: block !important;
+}
+
+
 /*  */
 /*  */
 /*  */

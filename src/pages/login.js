@@ -73,7 +73,7 @@ const Login =()=>{
 
         })
         
-    })
+    }, [])
 
     return`
     <div class="w-screen h-screen flex justify-center items-center bg-[url('./img/slide-1.jpg')] bg-no-repeat bg-cover">

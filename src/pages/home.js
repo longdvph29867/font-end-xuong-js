@@ -95,9 +95,9 @@ const Home =()=>{
                     return `
                     <div class="relative p-1 product_item">
                     <span class="absolute top-2 left-2 bg-cyan-500 px-1 uppercase text-white text-xs">new</span>
-                    <a href="#"><img src="img/product1.jpg" alt=""></a>
+                    <a href="/details/${item._id}"><img src="${item.image}" alt=""></a>
                     <div class="text-center">
-                        <a href="#" class="hover:text-[#ECAF82]"><h2 class=" font-medium mb-1">${item.productName}</h2></a>
+                        <a href="/details/${item._id}" class="hover:text-[#ECAF82]"><h2 class=" font-medium mb-1">${item.productName}</h2></a>
                         <span class="text-sm text-gray-400">Art</span> 
                         <div class="flex items-center text-sm justify-center my-2">
                             <i class="fa-regular fa-star"></i>

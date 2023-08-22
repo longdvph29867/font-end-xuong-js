@@ -13,4 +13,11 @@ export const dataService = {
     getProducts: () => {
         return https.get('/products')
     },
+    getProductByCategory: (slug) => {
+        return https.get(`/categories/${slug}`)
+    },
+
+    getProductDetails: (id) => {
+        return https.get(`/products/${id}`)
+    },
 }
