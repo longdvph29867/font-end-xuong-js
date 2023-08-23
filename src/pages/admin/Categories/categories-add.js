@@ -1,7 +1,7 @@
 import HeaderAdmin from "@/components/header-admin";
 import NavAdmin from "@/components/nav-admin";
 
-const CategoriesAdd = () => {
+const AdminCategoriesAdd = () => {
   return /*html*/ `
     <div class="container-admin h-screen w-screen bg-gray-100 flex flex-col">
     ${HeaderAdmin()}
@@ -35,4 +35,4 @@ const CategoriesAdd = () => {
     `;
 };
 
-export default CategoriesAdd;
+export default AdminCategoriesAdd;

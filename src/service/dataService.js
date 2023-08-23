@@ -16,8 +16,35 @@ export const dataService = {
     getProductByCategory: (slug) => {
         return https.get(`/categories/${slug}`)
     },
-
     getProductDetails: (id) => {
         return https.get(`/products/${id}`)
     },
+    postProductAdd: (data) => {
+        return https.post(`/products`,data)
+    },
+    getProductDetail: (id) => {
+        return https.get(`/products/${id}`)
+    },
+    putProductEdit: (id, data) => {
+        return https.put(`/products/${id}`, data)
+    },
+    deleteProduct: (id) => {
+        return https.delete(`/products/${id}`)
+    },
+    getUser: () => {
+        return https.get('/user')
+    },
+    postUserAdd: (data) => {
+        return https.post(`/user`,data)
+    },
+    getUserDetail: (id) => {
+        return https.get(`/user/${id}`)
+    },
+    putUserEdit: (id, data) => {
+        return https.put(`/user/${id}`, data)
+    },
+    deleteUser: (id) => {
+        return https.delete(`/user/${id}`)
+    },
+    
 }

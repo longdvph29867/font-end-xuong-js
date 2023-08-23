@@ -5,7 +5,6 @@ const HeaderAdmin =()=>{
 
     useEffect(() => {
         const btn = document.querySelector('.btn-show-admin')
-        console.log("🚀 ~ file: header-admin.js:8 ~ useEffect ~ btn:", btn)
         btn.addEventListener('click', () => {
             document.querySelector('.header-admin').classList.toggle('show-admin');
             document.querySelector('.menu-nav').classList.toggle('show-admin');
@@ -15,7 +14,7 @@ const HeaderAdmin =()=>{
 
     return /*html*/`
     <!-- Navbar -->
-    <nav class="header-admin pr-6 py-4 w-full flex flex-row flex-nowrap items-center justify-between bg-white shadow-sm transition-all duration-500 ease-in-out z-10">
+    <nav class="header-admin pr-6 py-4 w-full flex flex-row flex-nowrap items-center justify-between bg-white shadow-sm transition-all duration-500 ease-in-out z-20 ">
         <!-- sidenav button-->
         <div class="flex items-center">
             <div class="w-60 px-6 sm:block hidden">

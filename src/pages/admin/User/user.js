@@ -1,17 +1,17 @@
 import HeaderAdmin from "@/components/header-admin";
-import { hiddenSpinner, showSpinner } from "@/components/messages";
+import { hiddenSpinner, showMesssage, showSpinner } from "@/components/messages";
 import NavAdmin from "@/components/nav-admin";
 import { dataService } from "@/service/dataService";
 import { useEffect, useState } from "@/utilities";
 
-const AdminCategoriesPage = () => {
+const AdminUsersPage = () => {
 
     const [data, setData] = useState([]);
-    console.log("🚀 ~ file: products.js:8 ~ AdminProductsPage ~ data:", data)
+    console.log("🚀 ~ file: user.js:10 ~ AdminUsersPage ~ data:", data)
 
     useEffect(() => {
         showSpinner();
-        dataService.getProducts()
+        dataService.getUser()
         .then((res) => {
         //   console.log(res);
             hiddenSpinner();
@@ -22,6 +22,31 @@ const AdminCategoriesPage = () => {
             console.log(err);
         });
     }, []);
+
+    useEffect(() => {
+        const btnDeletes = document.getElementsByClassName('btn-delete')
+        for(let btn of btnDeletes) {
+            btn.addEventListener('click', function () {
+                const id = this.dataset.id;
+                
+                showSpinner();
+                dataService.deleteUser(id)
+                .then((res) => {
+                //   console.log(res);
+                    hiddenSpinner();
+                    const newData = data.filter((product) => product._id != id);
+                    setData(newData);
+                    showMesssage(true, res.data.message);
+                })
+                .catch((err) => {
+                    hiddenSpinner();
+                    console.log(err);
+                });
+            })
+        }
+    })
+
+
 
 
 
@@ -36,7 +61,7 @@ const AdminCategoriesPage = () => {
         <!-- End Navbar -->
         <div class="grow p-6">
             <div>
-                <a href="/admin/categories/add" class="inline-block bg-green-500 mb-3 py-1.5 px-5 rounded text-white hover:bg-green-700 duration-300">Thêm mới</a>
+                <a href="/admin/users/add" class="inline-block bg-green-500 mb-3 py-1.5 px-5 rounded text-white hover:bg-green-700 duration-300">Thêm mới</a>
             </div>
             <div class="bg-white">
                 
@@ -48,16 +73,13 @@ const AdminCategoriesPage = () => {
                                 STT
                             </th>
                             <th scope="col" class="px-6 py-3">
-                                Product name
+                                Username
                             </th>
                             <th scope="col" class="px-6 py-3">
-                                Img
+                                Email
                             </th>
                             <th scope="col" class="px-6 py-3">
-                                Price
-                            </th>
-                            <th scope="col" class="px-6 py-3">
-                                Category
+                                Role
                             </th>
                             <th scope="col" class="px-6 py-3">
                                 Action
@@ -73,20 +95,19 @@ const AdminCategoriesPage = () => {
                                         ${index+1}
                                     </th>
                                     <td class="px-6 py-4">
-                                        ${item.productName}
+                                        ${item.username}
                                     </td>
                                     <td class="px-6 py-4">
-                                        <img class="w-28" src="${item.image}" alt="" />
+                                        ${item.email}
                                     </td>
                                     <td class="px-6 py-4">
-                                        $${item.price}
+                                        <span class="inline-block p-1 rounded min-w-[70px] text-center border ${item.role == "admin" ? "border-[#e67e22] bg-[#e67e22]/10" : "border-[#3498db] bg-[#3498db]/10"}">
+                                            ${item.role}
+                                        </span>
                                     </td>
                                     <td class="px-6 py-4">
-                                        ${item.categoryId.categorieName}
-                                    </td>
-                                    <td class="px-6 py-4">
-                                        <a href="#" class="inline-block bg-yellow-400 mb-3 py-1.5 px-5 rounded text-white hover:bg-yellow-600 duration-300">Edit</a>
-                                        <a href="#" class="inline-block bg-red-500 mb-3 py-1.5 px-5 rounded text-white hover:bg-red-700 duration-300">Delete</a>
+                                        <a href="/admin/users/edit/${item._id}" class="inline-block bg-yellow-400 mb-3 py-1.5 px-5 rounded text-white hover:bg-yellow-600 duration-300">Edit</a>
+                                        <button data-id="${item._id}" class="btn-delete inline-block bg-red-500 mb-3 py-1.5 px-5 rounded text-white hover:bg-red-700 duration-300">Delete</button>
                                     </td>
                                 </tr>
                                 `
@@ -105,4 +126,4 @@ const AdminCategoriesPage = () => {
     `;
 };
 
-export default AdminCategoriesPage;
+export default AdminUsersPage;
