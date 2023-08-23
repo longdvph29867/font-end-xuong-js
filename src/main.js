@@ -7,6 +7,7 @@ import ProductsPage from "./pages/productsPage";
 import DetailsPage from "./pages/detailsPage";
 import Categories from "./pages/admin/Categories/categories";
 import CategoriesAdd from "./pages/admin/Categories/categories-add";
+import CategoriesUpdate from "./pages/admin/Categories/categories-update";
 const app = document.querySelector('#app'); 
 
 router.on("/", () => {
@@ -37,7 +38,9 @@ router.on("/admin/categories", () => {
 router.on("/admin/categories/add", () => {
   render(CategoriesAdd, app);
 });
-
+router.on("/admin/categories/update/:id", ({data}) => {
+  render(CategoriesUpdate(data), app);
+});
 
 router.resolve();
 // setupCounter(document.querySelector('#counter'))

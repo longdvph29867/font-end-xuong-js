@@ -1,7 +1,62 @@
 import HeaderAdmin from "@/components/header-admin";
 import NavAdmin from "@/components/nav-admin";
+import { dataService } from "@/service/dataService";
+import { router,useEffect,useState } from "@/utilities";
+// import { hiddenSpinner,showSpinner } from "@/components/messages";
 
-const Categories = () => {
+const Categories = (data = undefined) => {
+    const [listCategorys, setListCategorys] = useState([]);
+
+    useEffect(() => {
+        if(data) {
+            showSpinner();
+            dataService.getCategories()
+            .then((res) => {
+                // console.log(res);
+                // hiddenSpinner();
+                setListCategorys(res.data.data);
+            })
+            .catch((err) => {
+                hiddenSpinner();
+                console.log(err);
+            });
+        }
+        else {
+            // showSpinner();
+            dataService.getCategories()
+            .then((res) => {
+                // hiddenSpinner();
+                // console.log(res);
+                setListCategorys(res.data.data)
+            })
+            .catch((err) => {
+                // hiddenSpinner();
+                console.log(err);
+            });
+        }
+    }, [])
+
+    useEffect(()=>{
+        const btns= document.querySelectorAll('.btn_remove');
+        for (let btn of btns){
+            btn.addEventListener('click',async function (){
+                const id = this.dataset.id;
+                console.log(id);
+                const confirm = window.confirm("bạn có chắc chắn muốn xóa hay không?");
+                if(confirm){
+                    dataService.deleteCategories(id)
+                    .then(()=>{
+                        router.navigate('/admin/categories');   
+                    })
+                    .catch((err)=>{
+                        console.log(err);
+                    })
+                }
+            })
+        }
+    })
+
+    
   return /*html*/ `
     <div class="container-admin h-screen w-screen bg-gray-100 flex flex-col">
     ${HeaderAdmin()}
@@ -20,27 +75,36 @@ const Categories = () => {
                     <thead class="text-xs text-blue-500 uppercase bg-blue-100">
                         <tr>
                             <th scope="col" class="px-6 py-3">
-                                Product name
+                                Categorys Name
                             </th>
                             <th scope="col" class="px-6 py-3">
-                                Color
+                                Số lượng sản phẩm
                             </th>
+                            <!-- mess 
                             <th scope="col" class="px-6 py-3">
                                 Category
                             </th>
                             <th scope="col" class="px-6 py-3">
                                 Price
                             </th>
+                            -->
                             <th scope="col" class="px-6 py-3">
                                 Action
                             </th>
                         </tr>
                     </thead>
                     <tbody>
-                        <tr class="bg-white border-b">
+                        ${listCategorys.map(category=>{
+                            return `
+                            <tr class="bg-white border-b">
                             <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap">
-                                Apple MacBook Pro 17"
+                            ${category.categorieName}
                             </th>
+                            <td class="px-6 py-4">
+                            ${category.products.length}
+                            </td>
+
+                            <!-- mess 
                             <td class="px-6 py-4">
                                 Silver
                             </td>
@@ -50,47 +114,16 @@ const Categories = () => {
                             <td class="px-6 py-4">
                                 $2999
                             </td>
+                            -->
                             <td class="px-6 py-4">
-                                <a href="#" class="inline-block bg-yellow-400 mb-3 py-1.5 px-5 rounded text-white hover:bg-yellow-600 duration-300">Edit</a>
-                                <a href="#" class="inline-block bg-red-500 mb-3 py-1.5 px-5 rounded text-white hover:bg-red-700 duration-300">Delete</a>
+                                <a href="/admin/categories/update/${category._id}" class="inline-block bg-yellow-400 mb-3 py-1.5 px-5 rounded text-white hover:bg-yellow-600 duration-300">Edit</a>
+                                <button data-id="${
+                                    category._id
+                                }" class="btn_remove inline-block bg-red-500 mb-3 py-1.5 px-5 rounded text-white hover:bg-red-700 duration-300">Delete</button>
                             </td>
                         </tr>
-                        <tr class="bg-white border-b">
-                            <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap">
-                                Microsoft Surface Pro
-                            </th>
-                            <td class="px-6 py-4">
-                                White
-                            </td>
-                            <td class="px-6 py-4">
-                                Laptop PC
-                            </td>
-                            <td class="px-6 py-4">
-                                $1999
-                            </td>
-                            <td class="px-6 py-4">
-                                <a href="#" class="inline-block bg-yellow-400 mb-3 py-1.5 px-5 rounded text-white hover:bg-yellow-600 duration-300">Edit</a>
-                                <a href="#" class="inline-block bg-red-500 mb-3 py-1.5 px-5 rounded text-white hover:bg-red-700 duration-300">Delete</a>
-                            </td>
-                        </tr>
-                        <tr class="bg-white">
-                            <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap">
-                                Magic Mouse 2
-                            </th>
-                            <td class="px-6 py-4">
-                                Black
-                            </td>
-                            <td class="px-6 py-4">
-                                Accessories
-                            </td>
-                            <td class="px-6 py-4">
-                                $99
-                            </td>
-                            <td class="px-6 py-4">
-                                <a href="#" class="inline-block bg-yellow-400 mb-3 py-1.5 px-5 rounded text-white hover:bg-yellow-600 duration-300">Edit</a>
-                                <a href="#" class="inline-block bg-red-500 mb-3 py-1.5 px-5 rounded text-white hover:bg-red-700 duration-300">Delete</a>
-                            </td>
-                        </tr>
+                            `
+                        }).join("")}
                     </tbody>
                 </table>
                 </div>

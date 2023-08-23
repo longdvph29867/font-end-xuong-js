@@ -10,6 +10,12 @@ export const dataService = {
     getCategories: () => {
         return https.get('/categories')
     },
+    creatCategories: (data) => {
+        return https.post('/categories',data)
+    },
+    deleteCategories: (data) => {
+        return https.delete(`/categories/${data}`)
+    },
     getProducts: () => {
         return https.get('/products')
     },
