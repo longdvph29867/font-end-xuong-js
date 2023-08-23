@@ -18,7 +18,7 @@ const HeaderAdmin =()=>{
         <!-- sidenav button-->
         <div class="flex items-center">
             <div class="w-60 px-6 sm:block hidden">
-                <a href="" class="blog">
+                <a href="/" class="blog">
                     <img src="https://upload.wikimedia.org/wikipedia/commons/2/20/FPT_Polytechnic.png" alt="">
                 </a>
             </div>

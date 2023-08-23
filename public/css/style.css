@@ -67,6 +67,11 @@
     display: block !important;
 }
 
+.owl-item.active {
+    padding: 0;
+    background-color: transparent;
+}
+
 /* admin */
 .header-admin button i:nth-child(2) {
     display: none;
@@ -80,6 +85,8 @@
 .menu-nav.show-admin {
     left: 0;
 }
+
+
 /* /admin */
 
 
