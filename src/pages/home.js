@@ -83,7 +83,7 @@ const Home =()=>{
     </div>
     <!-- service -->
     <div  class="my-14">
-        <div class="w-[1290px] mx-auto flex py-5">
+        <div class="max-w-7xl mx-auto flex py-5">
             <div class="w-1/4 flex items-center">
                 <i class="text-4xl fa-solid fa-truck-fast"></i>
                 <div class="pl-5 border-r w-3/4">

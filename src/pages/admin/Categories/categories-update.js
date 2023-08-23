@@ -39,13 +39,16 @@ const AdminCategoriesUpdate = ({slug}) => {
                         const data = {
                             categorieName : categoryName
                         }
-                        dataService.updateCategories(slug,data)
+                        showSpinner()
+                        dataService.updateCategories(isCategori._id,data)
                         .then((res) => {
                             console.log(res);
                             // window.location.href = '/categories';
+                            hiddenSpinner()
                             router.navigate('/admin/categories');
                         })
                         .catch((err)=>{
+                            hiddenSpinner()
                             console.log(err);
                         })    
                     

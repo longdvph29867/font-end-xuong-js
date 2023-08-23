@@ -1,5 +1,6 @@
 import HeaderAdmin from "@/components/header-admin";
 import NavAdmin from "@/components/nav-admin";
+import { hiddenSpinner, showMesssage, showSpinner } from "@/components/messages";
 import { dataService } from "@/service/dataService";
 import { router, useEffect, useState } from "@/utilities";
 
@@ -30,13 +31,16 @@ const AdminCategoriesAdd = () => {
                         const data = {
                             categorieName : categoryName
                         }
+                        showSpinner();
                         dataService.creatCategories(data)
                         .then((res) => {
                             console.log(res);
                             // window.location.href = '/categories';
+                            hiddenSpinner()
                             router.navigate('/admin/categories');
                         })
                         .catch((err)=>{
+                            hiddenSpinner()
                             console.log(err);
                         })    
                     }

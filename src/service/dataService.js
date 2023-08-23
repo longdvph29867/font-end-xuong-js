@@ -16,8 +16,8 @@ export const dataService = {
     creatCategories: (data) => {
         return https.post('/categories',data)
     },
-    updateCategories: (slug,data) => {
-        return https.put(`/categories/${slug}`,data)
+    updateCategories: (id,data) => {
+        return https.put(`/categories/${id}`,data)
     },
     deleteCategories: (data) => {
         return https.delete(`/categories/${data}`)
