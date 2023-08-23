@@ -69,16 +69,16 @@ const AdminUsersPage = () => {
                 <table class="w-full text-sm text-left text-gray-500">
                     <thead class="text-xs text-blue-500 uppercase bg-blue-100">
                         <tr>
-                            <th scope="col" class="px-6 py-3">
+                            <th scope="col" class="px-6 py-3 md:block hidden">
                                 STT
                             </th>
                             <th scope="col" class="px-6 py-3">
                                 Username
                             </th>
-                            <th scope="col" class="px-6 py-3">
+                            <th scope="col" class="px-6 py-3 sm:block hidden">
                                 Email
                             </th>
-                            <th scope="col" class="px-6 py-3">
+                            <th scope="col" class="px-6 py-3 sm:block hidden">
                                 Role
                             </th>
                             <th scope="col" class="px-6 py-3">
@@ -91,16 +91,16 @@ const AdminUsersPage = () => {
                             data.map((item, index) => {
                                 return /*html*/`
                                 <tr class="bg-white border-b">
-                                    <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap">
+                                    <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap md:block hidden">
                                         ${index+1}
                                     </th>
                                     <td class="px-6 py-4">
                                         ${item.username}
                                     </td>
-                                    <td class="px-6 py-4">
+                                    <td class="px-6 py-4 sm:block hidden">
                                         ${item.email}
                                     </td>
-                                    <td class="px-6 py-4">
+                                    <td class="px-6 py-4 sm:block hidden">
                                         <span class="inline-block p-1 rounded min-w-[70px] text-center border ${item.role == "admin" ? "border-[#e67e22] bg-[#e67e22]/10" : "border-[#3498db] bg-[#3498db]/10"}">
                                             ${item.role}
                                         </span>

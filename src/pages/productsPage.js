@@ -46,7 +46,7 @@ const ProductsPage =(data = undefined) => {
 <!-- list product -->
 <div class="container mx-auto mt-16">
     <div class="flex">
-        <div class="w-1/4 px-4">
+        <div class="w-1/4 px-4 lg:block hidden">
 
             <div class="p-4 rounded mb-7" style="border: 1px solid #e1e1e1;">
                 <div class="relative">
@@ -143,13 +143,13 @@ const ProductsPage =(data = undefined) => {
 
             </div>
         </div>
-        <div class="w-3/4 px-4">
-            <div class="grid grid-cols-3 gap-5">
+        <div class="lg:w-3/4 w-full px-4">
+            <div class="grid md:grid-cols-3 sm:grid-cols-2 grid-cols-1 gap-5">
                 <!-- item product -->
                 ${
                     listProducts.map(item => {
                         return `
-                        <div class="relative p-1 product_item">
+                        <div class="relative p-1 product_item max-w-xs mx-auto">
                         <span class="absolute top-2 left-2 bg-cyan-500 px-1 uppercase text-white text-xs">new</span>
                         <a href="/details/${item._id}"><img src="${item.image}" alt=""></a>
                         <div class="text-center">

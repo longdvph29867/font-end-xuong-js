@@ -68,19 +68,19 @@ const AdminProductsPage = () => {
                 <table class="w-full text-sm text-left text-gray-500">
                     <thead class="text-xs text-blue-500 uppercase bg-blue-100">
                         <tr>
-                            <th scope="col" class="px-6 py-3">
+                            <th scope="col" class="px-6 py-3 md:block hidden">
                                 STT
                             </th>
                             <th scope="col" class="px-6 py-3">
                                 Product name
                             </th>
-                            <th scope="col" class="px-6 py-3">
+                            <th scope="col" class="px-6 py-3 sm:block hidden">
                                 Img
                             </th>
-                            <th scope="col" class="px-6 py-3">
+                            <th scope="col" class="px-6 py-3 sm:block hidden">
                                 Price
                             </th>
-                            <th scope="col" class="px-6 py-3">
+                            <th scope="col" class="px-6 py-3 sm:block hidden">
                                 Category
                             </th>
                             <th scope="col" class="px-6 py-3">
@@ -93,19 +93,19 @@ const AdminProductsPage = () => {
                             data.map((item, index) => {
                                 return /*html*/`
                                 <tr class="bg-white border-b">
-                                    <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap">
+                                    <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap  md:block hidden">
                                         ${index+1}
                                     </th>
                                     <td class="px-6 py-4">
                                         ${item.productName}
                                     </td>
-                                    <td class="px-6 py-4">
+                                    <td class="px-6 py-4 sm:block hidden">
                                         <img class="w-28" src="${item.image}" alt="" />
                                     </td>
-                                    <td class="px-6 py-4">
+                                    <td class="px-6 py-4 sm:block hidden">
                                         $${item.price}
                                     </td>
-                                    <td class="px-6 py-4">
+                                    <td class="px-6 py-4 sm:block hidden">
                                         ${item.categoryId.categorieName}
                                     </td>
                                     <td class="px-6 py-4">
