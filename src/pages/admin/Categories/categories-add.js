@@ -3,7 +3,7 @@ import NavAdmin from "@/components/nav-admin";
 import { dataService } from "@/service/dataService";
 import { router, useEffect, useState } from "@/utilities";
 
-const CategoriesAdd = () => {
+const AdminCategoriesAdd = () => {
     useEffect(() => {
         const btn = document.querySelector('#creatCategorys-form button');
         btn.addEventListener('click', () => {
@@ -79,4 +79,4 @@ const CategoriesAdd = () => {
     `;
 };
 
-export default CategoriesAdd;
+export default AdminCategoriesAdd;

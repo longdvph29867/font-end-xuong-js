@@ -24,7 +24,6 @@ const Header =()=>{
 
     useEffect(() => {
         const btn = document.querySelector('.btn-logout.user_link')
-        console.log("🚀 ~ file: header.js:29 ~ useEffect ~ btn:", '12313131331 3232')
         btn.addEventListener('click', () => {
             localUserService.remove();
             router.navigate("/");

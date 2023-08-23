@@ -22,16 +22,63 @@ const Home =()=>{
         });
     }, [])
 
+    useEffect(() => {
+        $('.carousel1').owlCarousel({
+            loop:true,
+            margin:0,
+            nav:false,
+            autoplay:true,
+            dots:false,
+            autoplayTimeout: 3000,
+            autoplaySpeed: 1000,
+            autoplayHoverPause: true ,
+            responsive:{
+                0:{
+                    items:1
+                },
+            }
+        })
+        $('.carousel2').owlCarousel({
+            loop:true,
+            margin:0,
+            nav:false,
+            autoplay:true,
+            dots:false,
+            autoplayTimeout: 3000,
+            autoplaySpeed: 1000,
+            autoplayHoverPause: true ,
+            responsive:{
+                0:{
+                    items:1
+                },
+                640: {
+                    items: 2
+                },
+                768: {
+                    items: 3
+                },
+                1024: {
+                    items: 5
+                }
+
+            }
+        })
+    })
+
     return /*html*/`
     ${Header()}
     
     <!-- slide-show -->
-    <div class="slide">
-        <div class="h-[633px]">
-            <img class="w-full h-full" src="img/slide-1.jpg" alt="" id="img-show">
+    <div class="owl-carousel owl-theme carousel1">
+        <div class="item">
+            <div class="h-[633px]">
+                <img class="w-full h-full" src="img/slide-1.jpg" alt="" id="img-show">
+            </div>
         </div>
-        <div class="h-[633px]">
-            <img class="w-full h-full" src="img/slide-2.png" alt="">
+        <div class="item">
+            <div class="h-[633px]">
+                <img class="w-full h-full" src="img/slide-2.png" alt="">
+            </div>
         </div>
     </div>
     <!-- service -->
@@ -207,24 +254,31 @@ const Home =()=>{
     </div>
     <!-- slide-brand -->
     <div class="my-5 max-w-7xl mx-auto">
-        <div class="slide_brand">
-            <div class="border p-10">
-                <img class="block mx-auto" src="img/1-brand_default.jpg" alt="">
+        <div class="owl-carousel owl-theme carousel2">
+            <div class="item">
+                <div class="border p-10">
+                    <img class="block mx-auto" src="img/2-brand_default.jpg" alt="">
+                </div>
             </div>
-            <div class="border p-10">
-                <img class="block mx-auto" src="img/2-brand_default.jpg" alt="">
+            <div class="item">
+                <div class="border p-10">
+                    <img class="block mx-auto" src="img/1-brand_default.jpg" alt="">
+                </div>
             </div>
-            <div class="border p-10">
-                <img class="block mx-auto" src="img/1-brand_default.jpg" alt="">
+            <div class="item">
+                <div class="border p-10">
+                    <img class="block mx-auto" src="img/2-brand_default.jpg" alt="">
+                </div>
             </div>
-            <div class="border p-10">
-                <img class="block mx-auto" src="img/2-brand_default.jpg" alt="">
+            <div class="item">
+                <div class="border p-10">
+                    <img class="block mx-auto" src="img/1-brand_default.jpg" alt="">
+                </div>
             </div>
-            <div class="border p-10">
-                <img class="block mx-auto" src="img/1-brand_default.jpg" alt="">
-            </div>
-            <div class="border p-10">
-                <img class="block mx-auto" src="img/2-brand_default.jpg" alt="">
+            <div class="item">
+                <div class="border p-10">
+                    <img class="block mx-auto" src="img/2-brand_default.jpg" alt="">
+                </div>
             </div>
         </div>
     </div>

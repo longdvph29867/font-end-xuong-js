@@ -4,7 +4,7 @@ import { dataService } from "@/service/dataService";
 import { router,useEffect,useState } from "@/utilities";
 // import { hiddenSpinner,showSpinner } from "@/components/messages";
 
-const Categories = (data = undefined) => {
+const AdminCategoriesPage = (data = undefined) => {
     const [listCategorys, setListCategorys] = useState([]);
 
     useEffect(() => {
@@ -116,7 +116,7 @@ const Categories = (data = undefined) => {
                             </td>
                             -->
                             <td class="px-6 py-4">
-                                <a href="/admin/categories/update/${category._id}" class="inline-block bg-yellow-400 mb-3 py-1.5 px-5 rounded text-white hover:bg-yellow-600 duration-300">Edit</a>
+                                <a href="/admin/categories/update/${category.slug}" class="inline-block bg-yellow-400 mb-3 py-1.5 px-5 rounded text-white hover:bg-yellow-600 duration-300">Edit</a>
                                 <button data-id="${
                                     category._id
                                 }" class="btn_remove inline-block bg-red-500 mb-3 py-1.5 px-5 rounded text-white hover:bg-red-700 duration-300">Delete</button>
@@ -137,4 +137,4 @@ const Categories = (data = undefined) => {
     `;
 };
 
-export default Categories;
+export default AdminCategoriesPage;
