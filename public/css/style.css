@@ -20,6 +20,10 @@
 .main_menu:hover .menu_child{
     display: block;
 }
+.show_nav{
+    display: flex !important;
+    transition: all ease .3s;
+}
 .icon{
     transition: ease .2s;
 }
