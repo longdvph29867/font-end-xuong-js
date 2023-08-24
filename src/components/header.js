@@ -36,36 +36,43 @@ const Header =()=>{
         btn.addEventListener('click', () => {
             nav_list.classList.toggle('show_nav');
         })
-
-        let btn_search = document.getElementById('search');
+        
         let search_2= document.getElementById('search_2');
         let close_form= document.getElementById('close_form');
-        function checkAndRemoveId() {
-            if (window.innerWidth > 640) {
-                btn_search.removeAttribute('id');
-            }else{
-                btn_search.type='button';
-            }
-          }
-          
-          // Gọi hàm kiểm tra ban đầu khi tải trang
-          checkAndRemoveId();
-          
-          // Theo dõi sự kiện thay đổi kích thước màn hình
-          window.addEventListener('resize', checkAndRemoveId);
-          
-          btn_search.addEventListener('click', () => {
-              search_2.classList.remove('hidden');
-              search_2.classList.add('flex')
-          })
-          close_form.addEventListener('click', () => {
+        let btn_search = document.getElementById('search');
+
+        function handleButtonClick1() {
+            search_2.classList.remove('hidden');
+            search_2.classList.add('flex')
+        }
+        function handleButtonClick2() {
             search_2.classList.remove('flex');
             search_2.classList.add('hidden')
-        })
-        
-    })
-    
+        }
+        function addEventButton(){
+            btn_search.type='button'
+            btn_search.addEventListener("click",handleButtonClick1);
+            close_form.addEventListener('click',handleButtonClick2)
+               
+        }
+        function removeEventButton() {
+            btn_search.type='submit'
+            btn_search.removeEventListener("click",handleButtonClick1)
+            close_form.removeEventListener('click',handleButtonClick2)
+        }
 
+
+        function checkAndRemoveId() {
+            if (window.innerWidth > 640) {
+                removeEventButton();
+            }else{
+                addEventButton();
+            }
+            }
+            checkAndRemoveId();
+            window.addEventListener('resize', checkAndRemoveId);
+          })
+          
     return /*html*/`
     <header class="relative">
         <div class="max-w-7xl mx-auto flex items-start xl:items-center justify-between p-3">
